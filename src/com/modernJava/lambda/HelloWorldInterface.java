@@ -1,3 +1,5 @@
+package com.modernJava.lambda;
+
 @FunctionalInterface
 public interface HelloWorldInterface {
     String sayHelloWorld();

@@ -1,3 +1,5 @@
+package com.modernJava.lambda;
+
 import java.util.stream.IntStream;
 
 public class RunnableExample {

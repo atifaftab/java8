@@ -1,3 +1,5 @@
+package com.modernJava.lambda;
+
 public class ConcatenateLambda {
     public static void main(String[] args) {
         ConcatenateInterface concatenateInterface = (a, b) -> a + " " + b;

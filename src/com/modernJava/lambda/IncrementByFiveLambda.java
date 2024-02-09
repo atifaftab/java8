@@ -1,3 +1,5 @@
+package com.modernJava.lambda;
+
 public class IncrementByFiveLambda {
     public static void main(String[] args) {
         IncrementByFiveInterface incrementByFiveInterface = a -> a + 5;
