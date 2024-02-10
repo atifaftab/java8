@@ -3,7 +3,7 @@ package com.modernJava.funcProgramming;
 import java.util.Arrays;
 import java.util.List;
 
-public class instructors {
+public class Instructors {
 
     public static List<Instructor> getAll(){
         Instructor instructor1 = new Instructor("Mike", 10, "Software Developer"
