@@ -3,7 +3,7 @@ package com.modernJava.funcProgramming;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PredicateEampleForInstructor {
+public class PredicateExampleForInstructor {
     public static void main(String[] args) {
         List<Instructor> instructorList = Instructors.getAll();
 
