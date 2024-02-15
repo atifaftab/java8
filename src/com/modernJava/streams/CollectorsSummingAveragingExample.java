@@ -13,6 +13,8 @@ public class CollectorsSummingAveragingExample {
 //                .mapToInt(Instructor::getYearsOfExperience).sum();
         System.out.println("sum = " + sum);
 
+        System.out.println("-----");
+
         double average = Instructors.getAll().stream()
                 .collect(Collectors.averagingInt(Instructor::getYearsOfExperience));
         System.out.println("average = " + average);
