@@ -3,6 +3,7 @@ package com.modernJava.streams;
 import com.modernJava.funcProgramming.Instructor;
 import com.modernJava.funcProgramming.Instructors;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,6 +24,11 @@ public class GroupingByExample1 {
             System.out.println("key = " + k + " value = " + v);
         });
         System.out.println("-----");
-
+        // grouping by experience where >10 years of experience is classified as senior and other are juniors
+        Map<String, List<Instructor>> mapExperienceInstructor = Instructors.getAll().stream()
+                .collect(Collectors.groupingBy(i -> i.getYearsOfExperience() > 10 ? "SENIOR" : "JUNIOR"));
+        mapExperienceInstructor.forEach((k, v) -> {
+            System.out.println("key = " + k + " value = " + v);
+        });
     }
 }
