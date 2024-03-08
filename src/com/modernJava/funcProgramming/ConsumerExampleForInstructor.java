@@ -1,6 +1,7 @@
 package com.modernJava.funcProgramming;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 public class ConsumerExampleForInstructor {
@@ -43,8 +44,7 @@ public class ConsumerExampleForInstructor {
 //                System.out.println(i.getName());
 //        };
         instructor.forEach(i -> {
-            if (i.yearsOfExperience > 10)
-                System.out.println(i.getName());
+            if (i.yearsOfExperience > 10) System.out.println(i.getName());
         });
 
         //practice
@@ -66,9 +66,21 @@ public class ConsumerExampleForInstructor {
         });
 
 
+        //test
         instructor.forEach(i -> {
             if (i.getYearsOfExperience() > 5 && i.isOnlineCourse()) {
                 consumer1.andThen(j -> System.out.println(j.yearsOfExperience)).accept(i);
+            }
+        });
+        System.out.println("--------------");
+
+        //print name of only max experience
+        Optional<Integer> maxExp = instructor.stream().map(Instructor::getYearsOfExperience).max(Integer::compareTo);
+        maxExp.ifPresent(System.out::println);
+        System.out.println("--------------");
+        instructor.forEach(i -> {
+            if (i.getYearsOfExperience() == maxExp.get()) {
+                System.out.println(i.getName());
             }
         });
     }
