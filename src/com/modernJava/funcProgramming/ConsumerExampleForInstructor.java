@@ -13,12 +13,21 @@ public class ConsumerExampleForInstructor {
         Consumer<Instructor> consumer = i -> System.out.println(i);
 //      Consumer<Instructor> consumer = System.out::println;
         instructor.forEach(consumer);
+        System.out.println("--------------");
 
+        //practice
+        instructor.forEach(System.out::println);
         System.out.println("--------------");
 
         //looping through all instructor and printing only name of all instructor
         Consumer<Instructor> consumer1 = i -> System.out.println(i.getName());
         instructor.forEach(consumer1);
+
+        System.out.println("--------------");
+
+        //practice
+        Consumer<Instructor> instructorConsumer = instructor1 -> System.out.println(instructor1.getName());
+        instructor.forEach(instructorConsumer);
 
         System.out.println("--------------");
 
