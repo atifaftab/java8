@@ -79,8 +79,10 @@ public class ConsumerExampleForInstructor {
         maxExp.ifPresent(System.out::println);
         System.out.println("--------------");
         instructor.forEach(i -> {
-            if (i.getYearsOfExperience() == maxExp.get()) {
-                System.out.println(i.getName());
+            if (maxExp.isPresent()) {
+                if (i.getYearsOfExperience() == maxExp.get()) {
+                    System.out.println(i.getName());
+                }
             }
         });
     }
