@@ -23,7 +23,7 @@ public class ConsumerExampleForInstructor {
         Consumer<Instructor> consumer1 = i -> System.out.println(i.getName());
         instructor.forEach(consumer1);
 
-        System.out.println("--------------");
+        System.out.println("--------------practice");
 
         //practice
         Consumer<Instructor> instructorConsumer = instructor1 -> System.out.println(instructor1.getName());
@@ -47,12 +47,27 @@ public class ConsumerExampleForInstructor {
                 System.out.println(i.getName());
         });
 
+        //practice
+        System.out.println("--------------practice");
+        instructor.forEach(i -> {
+            if (i.getYearsOfExperience() > 10) {
+                System.out.println(i.getName());
+            }
+        });
+
         System.out.println("--------------");
 
 //        looping through all instructors and print out their names and years of experiences  if the years of
 //         experience >5 and teaches course online
         instructor.forEach(i -> {
             if (i.yearsOfExperience > 5 && (i.isOnlineCourse())) {
+                consumer1.andThen(j -> System.out.println(j.yearsOfExperience)).accept(i);
+            }
+        });
+
+
+        instructor.forEach(i -> {
+            if (i.getYearsOfExperience() > 5 && i.isOnlineCourse()) {
                 consumer1.andThen(j -> System.out.println(j.yearsOfExperience)).accept(i);
             }
         });
