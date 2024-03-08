@@ -9,7 +9,7 @@ public class BiConsumerExample2 {
 
         //print out name and gender of instructors
         BiConsumer<String, String> biConsumer = (a, b) -> System.out.println("name " + a + " gender " + b);
-        instructorList.forEach(i ->         biConsumer.accept(i.getName(), i.getGender()));
+        instructorList.forEach(i -> biConsumer.accept(i.getName(), i.getGender()));
         System.out.println("---------------");
         //print out name and courses
         BiConsumer<String, List<String>> listBiConsumer = (name, courseList) -> System.out.println("name " + name + " courses " + courseList);
