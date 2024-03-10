@@ -18,6 +18,8 @@ public class FunctionExample {
         System.out.println(upperCase.andThen(concat).apply("You again in"));
         System.out.println(upperCase.compose(concat).apply("You again in"));
 
+
+
     }
 }
 
