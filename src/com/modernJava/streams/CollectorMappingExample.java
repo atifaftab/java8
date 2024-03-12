@@ -16,6 +16,8 @@ public class CollectorMappingExample {
         System.out.println("-----");
         namesList = Instructors.getAll().stream()
                 .collect(Collectors.mapping(Instructor::getName, Collectors.toList()));
+//        namesList = Instructors.getAll().stream().map(Instructor::getName).collect(Collectors.toList());
+
 
         namesList.forEach(System.out::println);
 
