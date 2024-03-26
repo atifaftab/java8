@@ -4,6 +4,9 @@ public class HelloWorldLambda {
     public static void main(String[] args) {
         HelloWorldInterface helloWorldInterface = () -> "Hey world";
         System.out.println(helloWorldInterface.sayHelloWorld());
+
+        HelloWorldInterface helloWorldInterface1 = () -> "yo! what's up?";
+        System.out.println(helloWorldInterface1.sayHelloWorld());
     }
 }
 
