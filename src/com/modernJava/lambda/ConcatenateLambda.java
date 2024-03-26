@@ -6,5 +6,8 @@ public class ConcatenateLambda {
         ConcatenateInterface concatenateInterfaceByMethodReference = String::concat;
         System.out.print(concatenateInterface.concat("Mohammad", "Atif "));
         System.out.println(concatenateInterfaceByMethodReference.concat("Af", "tab"));
+
+        ConcatenateInterface concatenateInterface1 = String::concat;
+        System.out.println(concatenateInterface1.concat("I am ", "28"));
     }
 }
