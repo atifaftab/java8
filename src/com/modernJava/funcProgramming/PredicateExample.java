@@ -3,8 +3,8 @@ package com.modernJava.funcProgramming;
 import java.util.function.Predicate;
 
 public class PredicateExample {
-    //It will accept only one argument and return ony boolean
-//    it ave one method  test()
+    //It will accept only one argument and return only boolean (true or false)
+//    it have one method  test()
 //        package : java.util.function.Predicate;
     public static void main(String[] args) {
 
