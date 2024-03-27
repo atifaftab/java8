@@ -9,7 +9,7 @@ public class BiPredicateAndBiConsumerExample {
 
         List<Instructor> instructorList = Instructors.getAll();
 
-        BiPredicate<Boolean, Integer> biPredicate = (online, experience) -> online == true && experience > 10;
+        BiPredicate<Boolean, Integer> biPredicate = (online, experience) -> online && experience > 10;
         BiConsumer<String, List<String>> biConsumer = (name, courses) -> System.out.println("name " + name + " courses " + courses);
 
         //print name and course of those instructor who teaches online and have experience more than 10 years.
