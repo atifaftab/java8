@@ -11,7 +11,7 @@ public class FunctionExample {
 
         Function<String,String > upperCase = i-> i.toUpperCase();
 //        Function<String, String> upperCase = String::toLowerCase;
-        System.out.println(upperCase.apply("THANK YOU"));
+        System.out.println(upperCase.apply("thank you"));
 
         Function<String, String > concat = i-> i.concat(" java world");
         System.out.println(concat.apply("Hello"));
