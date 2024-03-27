@@ -26,10 +26,5 @@ public class PredicateExampleForInstructor {
                 System.out.println(i);
             }
         });
-
-        instructorList.forEach(i -> {
-            if (predicate.and(predicate1).test(i))
-                System.out.println(i);
-        });
     }
 }
