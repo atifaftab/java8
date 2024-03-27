@@ -17,6 +17,8 @@ public class FunctionExampleForInsructor {
         Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
 //        Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
 
+//        Function<Instructor, Map<String, Integer>> function = Instructors.getAll().stream();
+
         Function<List<Instructor>, Map<String, Integer>> mapFunction = instructors -> {
             Map<String, Integer> mapNameAndExperience = new HashMap<>();
             instructors.forEach(instructor -> {

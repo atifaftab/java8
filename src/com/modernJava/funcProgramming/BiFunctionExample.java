@@ -10,7 +10,6 @@ public class BiFunctionExample {
     public static void main(String[] args) {
         //BiFunction 2 inputs List<Instructor> and 2nd is predicate which will filter if the instructor has online
         //courses and return a map of <String,Integer> String is name and Integer is years of experience
-
 //        Predicate<Instructor> instructorPredicate = i -> i.isOnlineCourse();
         Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
 
