@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 public class FunctionExampleForInsructor {
     public static void main(String[] args) {
         //Map of instructor with name and years of experience
-        //Function which will tale List<Instructor> and return Map<String, Integer>
+        //Function which will take List<Instructor> and return Map<String, Integer>
         //to create map of instructor who have online courses, so create predicate
 
         List<Instructor> instructorList = Instructors.getAll();
