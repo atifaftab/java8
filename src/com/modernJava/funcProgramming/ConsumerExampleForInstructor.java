@@ -30,6 +30,9 @@ public class ConsumerExampleForInstructor {
         Consumer<Instructor> instructorConsumer = instructor1 -> System.out.println(instructor1.getName());
         instructor.forEach(instructorConsumer);
 
+        System.out.println("------------practice using directly stream and map------------");
+        Instructors.getAll().stream().map(Instructor::getName).forEach(System.out::println);
+
         System.out.println("--------------");
 
         //looping through all instructor and printing the name and courses
@@ -85,5 +88,14 @@ public class ConsumerExampleForInstructor {
                 }
             }
         });
+
+        Optional<Integer> maxExp1 = Instructors.getAll().stream().map(Instructor::getYearsOfExperience).max(Integer::compareTo);
+        maxExp1.ifPresent(System.out::println);
+        Instructors.getAll().forEach(i -> {
+            if (maxExp1.isPresent()) {
+                if (i.getYearsOfExperience() == maxExp1.get()) System.out.println(i.getName());
+            }
+        });
+
     }
 }
