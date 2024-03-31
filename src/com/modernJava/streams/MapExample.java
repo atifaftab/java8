@@ -11,6 +11,13 @@ public class MapExample {
     public static void main(String[] args) {
         //return only instructor names from the instructor list
 
+        //practice
+        Instructors.getAll().stream()
+                .map(Instructor::getName)
+                .forEach(System.out::println);
+
+        System.out.println("-----------");
+
         List<String> namesList = Instructors.getAll().stream()
 //                .peek(i -> System.out.println(i))    peek is use for debug
                 .map(Instructor::getName)
