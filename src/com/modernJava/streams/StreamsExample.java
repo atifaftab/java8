@@ -9,6 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class StreamsExample {
+
     public static void main(String[] args) {
         //creating a map of names and courses of instructors who teaches online and have more than 10 years of experience
 
@@ -26,5 +27,12 @@ public class StreamsExample {
                 .filter(moreThan10yearsOfExperiencePredicate)
                 .collect(Collectors.toMap(Instructor::getName, Instructor::getCourses));
         System.out.println(nameAndCourseMap);
+
+        //for practice
+        Map<String, List<String>> nameAndCoursesMap = Instructors.getAll().stream()
+                .filter(Instructor::isOnlineCourse)
+                .filter(i -> i.getYearsOfExperience() > 10)
+                .collect(Collectors.toMap(Instructor::getName, Instructor::getCourses));
+        System.out.println(nameAndCoursesMap);
     }
 }
