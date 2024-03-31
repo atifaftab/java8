@@ -14,6 +14,7 @@ public class MapExample {
         //practice
         Instructors.getAll().stream()
                 .map(Instructor::getName)
+                .map(String::toUpperCase)
                 .forEach(System.out::println);
 
         System.out.println("-----------");
