@@ -25,10 +25,11 @@ public class StreamReduceExample {
         optional.ifPresent(System.out::println);
 
         System.out.println("----");
-        Optional<Integer> division = integerList.stream().reduce(Integer::divideUnsigned);
-        int division1 = integerList.stream().reduce(1, Integer::divideUnsigned);
+        var list = Arrays.asList(16,8,2);
+        Optional<Integer> division = list.stream().reduce(Integer::divideUnsigned);
+        Optional<Integer> division1 = list.stream().reduce((a,b) -> a/b);
         division.ifPresent(System.out::println);
-        System.out.println(division1);
+        System.out.println(division1.get());
 
 //        if (optional.isPresent()) {
 //            System.out.println(optional.get());
