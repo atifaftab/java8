@@ -1,8 +1,6 @@
 package com.modernJava.streams;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class StreamReduceExample {
     public static void main(String[] args) {
@@ -25,6 +23,12 @@ public class StreamReduceExample {
                 .reduce(Integer::sum);
 
         optional.ifPresent(System.out::println);
+
+        System.out.println("----");
+        Optional<Integer> division = integerList.stream().reduce(Integer::divideUnsigned);
+        int division1 = integerList.stream().reduce(1, Integer::divideUnsigned);
+        division.ifPresent(System.out::println);
+        System.out.println(division1);
 
 //        if (optional.isPresent()) {
 //            System.out.println(optional.get());
