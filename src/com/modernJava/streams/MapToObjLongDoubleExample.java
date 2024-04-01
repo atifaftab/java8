@@ -6,7 +6,7 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
-public class MaptoObjLongDoubleExample {
+public class MapToObjLongDoubleExample {
     public static void main(String[] args) {
 
         List<RandomIds> randomIdsList = IntStream.rangeClosed(0, 5)

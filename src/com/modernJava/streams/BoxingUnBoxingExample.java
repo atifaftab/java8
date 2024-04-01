@@ -12,12 +12,14 @@ public class BoxingUnBoxingExample {
         numbers = numStream.boxed().collect(Collectors.toList());
         numbers.forEach(System.out::println);
 
+        //unboxing by reduce
         System.out.println("----");
         Optional<Integer> sunNum = numbers.stream().reduce(Integer::sum);   //  .reduce((a,b)-> a+b)
         int sumInt = numbers.stream().reduce(0, (a, b) -> a + b);   //  .reduce((a,b)-> a+b)
         sunNum.ifPresent(System.out::println);
         System.out.println(sumInt);
 
+        //unboxing by mapToInt
         System.out.println("----");
         int sum = numbers.stream().mapToInt(Integer::intValue).sum();   //  .mapToInt(i -> i)
         System.out.println(sum);
