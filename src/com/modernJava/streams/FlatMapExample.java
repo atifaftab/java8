@@ -6,6 +6,7 @@ import com.modernJava.funcProgramming.Instructors;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FlatMapExample {
     public static void main(String[] args) {
@@ -15,11 +16,6 @@ public class FlatMapExample {
                 .map(Instructor::getCourses)
                 .flatMap(List::stream)
                 .collect(Collectors.toSet());
-
         System.out.println(instructorSet);
-
-//        List<String> coursesList = Instructors.getAll().stream()
-//                .flatMap(Instructor::getCourses)
-//                .toList();
     }
 }
