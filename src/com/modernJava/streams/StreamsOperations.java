@@ -4,8 +4,6 @@ import com.modernJava.funcProgramming.Instructor;
 import com.modernJava.funcProgramming.Instructors;
 
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class StreamsOperations {
     public static void main(String[] args) {
@@ -15,7 +13,7 @@ public class StreamsOperations {
                 .flatMap(List::stream)
                 .count();
 
-        //count but using avanced method
+        //count but using advanced method
         long count1 = Instructors.getAll().stream()
                 .map(Instructor::getCourses)
                 .mapToLong(List::size)

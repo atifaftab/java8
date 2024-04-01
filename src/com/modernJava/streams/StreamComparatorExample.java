@@ -14,6 +14,10 @@ public class StreamComparatorExample {
                 .sorted(Comparator.comparing(Instructor::getName))
                 .toList();
 
+        Instructors.getAll().stream()
+                        .sorted(Comparator.comparing(instructor -> instructor.getName()))
+                        .toList();
+
         System.out.println(instructorList);
         System.out.println("---------------");
         instructorList.forEach(System.out::println);
