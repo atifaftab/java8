@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class StreamMapFilterReduceExample {
     public static void main(String[] args) {
-        //total years of instructor b/w instructors who teaches online
+        //total years of experience b/w instructors who teaches online
 
         int yearsOfExperience1 = Instructors.getAll().stream()
                 .filter(instructor -> instructor.isOnlineCourse())
