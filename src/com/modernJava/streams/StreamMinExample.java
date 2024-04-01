@@ -32,5 +32,13 @@ public class StreamMinExample {
 
         Optional<Integer> min1 = number.stream().reduce(Integer::min);
         min1.ifPresent(System.out::println);
+
+
+        System.out.println("---------");
+//        practice
+        System.out.println(number.stream().reduce(Integer::min).get());
+        System.out.println(number.stream().min(Comparator.naturalOrder()).get());
+        System.out.println(number.stream().reduce((a,b) -> a<b?a:b).get());
+        System.out.println(number.stream().reduce(Integer::max));
     }
 }
