@@ -25,5 +25,10 @@ public class StreamMaxExample {
         Optional<Integer> sum = numberList.stream().reduce(Integer::sum);
         sum.ifPresent(System.out::println);
 
+        System.out.println("------");
+        System.out.println(numberList.stream().max(Comparator.naturalOrder()).get());
+        System.out.println(numberList.stream().max(Integer::compareTo).get());
+        System.out.println(numberList.stream().reduce(0,Integer::sum));
+
     }
 }
