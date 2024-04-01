@@ -13,6 +13,7 @@ public class StreamFindAnyAndFirstExample {
         Optional<Instructor> first = Instructors.getAll().stream().findFirst();
         first.ifPresent(System.out::println);
 
+        System.out.println("-----");
         //findAny
         Optional<Instructor> any = Instructors.getAll().stream().findAny();
         any.ifPresent(System.out::println);
