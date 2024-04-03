@@ -18,5 +18,12 @@ public class BiPredicateAndBiConsumerExample {
                 biConsumer.accept(instructor.getName(), instructor.getCourses());
             }
         });
+
+        //same code using other method
+        System.out.println("----------");
+        Instructors.getAll().stream()
+                .filter(Instructor::isOnlineCourse)
+                .filter(instructor -> instructor.getYearsOfExperience() > 10)
+                .forEach(i -> System.out.println("name: " + i.getName() + " course: " + i.getCourses()));
     }
 }
