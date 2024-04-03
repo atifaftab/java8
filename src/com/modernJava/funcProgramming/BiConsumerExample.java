@@ -5,6 +5,7 @@ import java.util.function.BiConsumer;
 public class BiConsumerExample {
     public static void main(String[] args) {
 
+        //BiConsumer will take 2 param and will not return anything
         //print 2 number
         BiConsumer<Integer, Integer> biConsumer = (a, b) -> System.out.println("x : " + a + ", b : " + b);
         biConsumer.accept(10, 100);
