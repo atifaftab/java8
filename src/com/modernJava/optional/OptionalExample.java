@@ -9,5 +9,10 @@ public class OptionalExample {
 
         Optional<Integer> num = Optional.ofNullable(intArr[2]);
         System.out.println(num);
+
+        System.out.println("-----");
+        int checkNum = num.isPresent() ? num.get() : -1;
+//        int checkNum = num.orElse(0);
+        System.out.println(checkNum);
     }
 }
