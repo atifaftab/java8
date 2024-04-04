@@ -11,11 +11,10 @@ public class MapExample {
     public static void main(String[] args) {
         //return only instructor names from the instructor list
 
-        //practice
-        Instructors.getAll().stream()
-                .map(Instructor::getName)
-                .map(String::toUpperCase)
-                .forEach(System.out::println);
+        //same code in simple way
+//        Instructors.getAll().stream()
+//                .map(i -> i.getName())
+//                .map(i -> i.toUpperCase());
 
         System.out.println("-----------");
 
