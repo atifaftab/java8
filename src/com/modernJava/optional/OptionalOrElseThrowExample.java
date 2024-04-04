@@ -7,7 +7,7 @@ public class OptionalOrElseThrowExample {
 
         //orElse
         Integer[] num = new Integer[10];
-        num[1] = 5;
+//        num[1] = 5;
         Optional<Integer> optionalnum = Optional.ofNullable(num[1]);
         int result = optionalnum.orElse(-1);
         System.out.println("orElse: " + result);
@@ -15,5 +15,12 @@ public class OptionalOrElseThrowExample {
         //orElseGet
         result = optionalnum.orElseGet(() -> -1);
         System.out.println("orElseGet: " + result);
+
+        try {
+            result = optionalnum.orElseThrow(Exception::new);
+            System.out.println("orElseThrow: " + result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
