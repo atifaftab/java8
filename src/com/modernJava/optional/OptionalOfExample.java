@@ -8,14 +8,16 @@ public class OptionalOfExample {
 //        Optional<String> optionalString = Optional.of(null);
         System.out.println(optionalString);
 
-        System.out.println(getWords());
+        getWords().ifPresent(System.out::println);
     }
 
     public static Optional<String> getWords() {
         String[] words = new String[10];
-        Optional<String> word = Optional.ofNullable(words[2]);
+        words[1] = "Atif";
+        Optional<String> word = Optional.ofNullable(words[1]);
         if (word.isPresent())
             return word;
         return Optional.empty();
+//        return word;
     }
 }
