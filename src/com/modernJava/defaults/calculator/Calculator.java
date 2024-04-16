@@ -1,4 +1,4 @@
-package com.modernJava.defaults;
+package com.modernJava.defaults.calculator;
 
 @FunctionalInterface
 public interface Calculator {
