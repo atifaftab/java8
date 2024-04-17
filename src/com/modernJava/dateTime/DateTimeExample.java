@@ -2,10 +2,13 @@ package com.modernJava.dateTime;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
-public class DateTime {
+public class DateTimeExample {
     public static void main(String[] args) {
         //old api
         Date date = new Date();
@@ -19,6 +22,13 @@ public class DateTime {
 
         //new
         //local
-//        DateTime dateTime =
+        LocalDate localDate = LocalDate.now();
+        System.out.println("Date: " + localDate);
+
+        LocalTime localTime = LocalTime.now();
+        System.out.println("Time: " + localTime);
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println("localDateTime: " + localDateTime);
     }
 }
