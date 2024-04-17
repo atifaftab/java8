@@ -1,11 +1,9 @@
 package com.modernJava.dateTime;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.temporal.ChronoField;
-import java.time.temporal.TemporalAdjuster;
-import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.TemporalAmount;
+import java.time.temporal.*;
 
 public class DateModifyExample {
     public static void main(String[] args) {
@@ -40,5 +38,35 @@ public class DateModifyExample {
         System.out.println(localTime.getNano());
 
         System.out.println(localTime.get(ChronoField.SECOND_OF_MINUTE));
+
+
+        System.out.println();
+        System.out.println("----MODIFYING----");
+        //modifying
+        System.out.println(localTime.plusHours(16));
+        System.out.println(localTime.plusMinutes(45));
+        System.out.println(localTime.minusMinutes(32));
+        System.out.println(localTime.minusSeconds(543));
+        System.out.println("----MODIFYING----1");
+
+        System.out.println(localTime.minus(2, ChronoUnit.HOURS));
+        System.out.println(localTime.with(LocalTime.MIDNIGHT));
+
+        System.out.println("----MODIFYING----2");
+        LocalTime localTimes = LocalTime.now();
+        System.out.println(localTimes);
+        System.out.println(localTimes.with(ChronoField.HOUR_OF_DAY, 3));
+
+        System.out.println("----Local date Time----");
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
+        System.out.println(localDateTime.toLocalDate());
+        System.out.println(localDateTime.toLocalTime());
+
+        LocalDateTime localDateTime1 = LocalDateTime.of(LocalDate.now(), LocalTime.now());
+        System.out.println(localDateTime1);
+
+        //Duration
     }
 }
