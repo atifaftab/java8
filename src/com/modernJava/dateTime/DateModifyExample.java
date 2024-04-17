@@ -66,7 +66,5 @@ public class DateModifyExample {
 
         LocalDateTime localDateTime1 = LocalDateTime.of(LocalDate.now(), LocalTime.now());
         System.out.println(localDateTime1);
-
-        //Duration
     }
 }
