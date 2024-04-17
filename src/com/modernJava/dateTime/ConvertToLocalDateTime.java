@@ -18,5 +18,9 @@ public class ConvertToLocalDateTime {
         System.out.println("Zoned Date Time: " + zonedDateTime);
         LocalDateTime localDateTime = zonedDateTime.toLocalDateTime();
         System.out.println("Local date time: " + localDateTime);
+
+        //date to LocalDateTime oneLiner
+        LocalDateTime localDateTime1 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        System.out.println(localDateTime1);
     }
 }
