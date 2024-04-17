@@ -1,10 +1,8 @@
 package com.modernJava.dateTime;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.util.Date;
+import java.util.Locale;
 
 public class ConvertToLocalDateTime {
     public static void main(String[] args) {
@@ -22,5 +20,13 @@ public class ConvertToLocalDateTime {
         //date to LocalDateTime oneLiner
         LocalDateTime localDateTime1 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
         System.out.println(localDateTime1);
+
+        System.out.println("------- SQL Date -------");
+        //sql date
+        java.sql.Date sqlDate = new java.sql.Date(System.currentTimeMillis());
+        System.out.println(sqlDate);
+//        LocalDate localDate = sqlDate.toLocalDate();
+//        System.out.println(localDate);
+        System.out.println(sqlDate.toLocalDate());
     }
 }
