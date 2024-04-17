@@ -1,6 +1,7 @@
 package com.modernJava.dateTime;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
@@ -23,5 +24,21 @@ public class DateModifyExample {
 
         //temporal adjuster
         System.out.println(localDate.with(TemporalAdjusters.lastDayOfMonth()));
+
+
+        LocalTime localTime = LocalTime.now();
+        System.out.println(LocalTime.of(10, 34, 23, 434343));
+        System.out.println("-------");
+        System.out.println(localDate.getYear());
+        System.out.println(localDate.getMonth());
+        System.out.println(localDate.getDayOfYear());
+        System.out.println("-------");
+        System.out.println(localTime);
+        System.out.println(localTime.getHour());
+        System.out.println(localTime.getMinute());
+        System.out.println(localTime.getSecond());
+        System.out.println(localTime.getNano());
+
+        System.out.println(localTime.get(ChronoField.SECOND_OF_MINUTE));
     }
 }
