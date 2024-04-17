@@ -56,15 +56,5 @@ public class DateModifyExample {
         LocalTime localTimes = LocalTime.now();
         System.out.println(localTimes);
         System.out.println(localTimes.with(ChronoField.HOUR_OF_DAY, 3));
-
-        System.out.println("----Local date Time----");
-
-        LocalDateTime localDateTime = LocalDateTime.now();
-        System.out.println(localDateTime);
-        System.out.println(localDateTime.toLocalDate());
-        System.out.println(localDateTime.toLocalTime());
-
-        LocalDateTime localDateTime1 = LocalDateTime.of(LocalDate.now(), LocalTime.now());
-        System.out.println(localDateTime1);
     }
 }
