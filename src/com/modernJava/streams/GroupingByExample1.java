@@ -25,6 +25,7 @@ public class GroupingByExample1 {
         // grouping by experience where >10 years of experience is classified as senior and other are juniors
         Map<String, List<Instructor>> mapExperienceInstructor = Instructors.getAll().stream()
                 .collect(Collectors.groupingBy(i -> i.getYearsOfExperience() > 10 ? "SENIOR" : "JUNIOR"));
+
         mapExperienceInstructor.forEach((k, v) -> System.out.println("key = " + k + " value = " + v));
     }
 }

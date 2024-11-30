@@ -9,5 +9,7 @@ public class ConcatenateLambda {
 
         ConcatenateInterface concatenateInterface1 = String::concat;
         System.out.println(concatenateInterface1.concat("I am ", "28"));
+        ConcatenateInterface concatenateInterface2 = (a,b) -> a+b;
+        System.out.println(concatenateInterface2.concat("Atif ", "Sarah"));
     }
 }

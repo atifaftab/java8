@@ -89,6 +89,9 @@ public class ConsumerExampleForInstructor {
             }
         });
 
+        Optional<Integer> max = instructor.stream().map(Instructor::getYearsOfExperience).max(Integer::compareTo);
+        max.ifPresent(System.out::println);
+
         Optional<Integer> maxExp1 = Instructors.getAll().stream().map(Instructor::getYearsOfExperience).max(Integer::compareTo);
         maxExp1.ifPresent(System.out::println);
         Instructors.getAll().forEach(i -> {
