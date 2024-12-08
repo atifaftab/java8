@@ -17,7 +17,6 @@ public class PredicateExampleForInstructor {
             if (predicate.test(i))
                 System.out.println(i);
         });
-
         System.out.println("---------------");
 
         //is instructor teaches online and experience is >10 years
@@ -26,5 +25,12 @@ public class PredicateExampleForInstructor {
                 System.out.println(i);
             }
         });
+        System.out.println("-----last ---------");
+
+        //without using if
+        instructorList.stream()
+                .filter(i -> predicate1.and(predicate).test(i))
+//                .map(Instructor::getName)
+                .forEach(System.out::println);
     }
 }
