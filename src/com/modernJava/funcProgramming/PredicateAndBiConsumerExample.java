@@ -34,10 +34,7 @@ public class PredicateAndBiConsumerExample {
         System.out.println("\n----- doing same without predicate and consumer");
         instructorList.stream()
                 .filter(i -> i.getYearsOfExperience() > 10 && i.isOnlineCourse())
-                .forEach(i -> {
-                    System.out.print("name " + i.getName());
-                    System.out.println(" and courses " + i.getCourses());
-                });
+                .forEach(i -> System.out.println("name " + i.getName() + " and courses " + i.getCourses()));
 
     }
 }
