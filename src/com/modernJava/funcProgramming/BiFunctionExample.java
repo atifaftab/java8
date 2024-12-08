@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class BiFunctionExample {
     public static void main(String[] args) {
@@ -14,6 +15,13 @@ public class BiFunctionExample {
         Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
 
         List<Instructor> instructorList = Instructors.getAll();
+
+//        BiFunction<List<Instructor>, Predicate<Instructor>, Map<String, Integer>> mapBiFunction = (instructors, predicateMapBiFunction) ->{
+//            Map<String, Integer> map = new HashMap<>();
+//            instructorList.stream()
+//                    .filter(instructorPredicate)
+//                    .collect(Collectors.toSet());
+//        }
 
         BiFunction<List<Instructor>, Predicate<Instructor>, Map<String, Integer>> biFunction = (instructors, predicate) -> {
             Map<String, Integer> map = new HashMap<>();

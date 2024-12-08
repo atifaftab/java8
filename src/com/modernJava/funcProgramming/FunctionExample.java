@@ -3,6 +3,7 @@ package com.modernJava.funcProgramming;
 import java.util.function.Function;
 
 public class FunctionExample {
+    //it take one argument and returns one, first datatype is type argument second datatype is type of return
     public static void main(String[] args) {
         Function<Integer, Double> sqrt = i -> Math.sqrt(i);
 //        Function<Integer, Double> sqrt = Math::sqrt;

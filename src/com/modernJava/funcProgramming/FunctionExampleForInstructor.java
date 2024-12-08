@@ -5,14 +5,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
-public class FunctionExampleForInsructor {
+public class FunctionExampleForInstructor {
     public static void main(String[] args) {
         //Map of instructor with name and years of experience
         //Function which will take List<Instructor> and return Map<String, Integer>
         //to create map of instructor who have online courses, so create predicate
 
         List<Instructor> instructorList = Instructors.getAll();
+
+//        instructorList.stream()
+//                .filter(Instructor::isOnlineCourse)
+//                .collect(Collectors.groupingBy())
 
         Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
 //        Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
