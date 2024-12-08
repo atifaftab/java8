@@ -19,7 +19,7 @@ public class BiPredicateAndBiConsumerExample {
             }
         });
 
-        //same code using other method
+        //same code replacing if by filter
         System.out.println("----------");
         Instructors.getAll().stream()
                 .filter(Instructor::isOnlineCourse)
