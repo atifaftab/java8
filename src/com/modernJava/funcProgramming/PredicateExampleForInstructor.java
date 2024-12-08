@@ -32,5 +32,11 @@ public class PredicateExampleForInstructor {
                 .filter(i -> predicate1.and(predicate).test(i))
 //                .map(Instructor::getName)
                 .forEach(System.out::println);
+
+//        System.out.println("\n---- using old java ----");
+//        for (Instructor instructor : instructorList) {
+//            if (instructor.getYearsOfExperience() > 10 && instructor.isOnlineCourse())
+//                System.out.println(instructor);
+//        }
     }
 }
