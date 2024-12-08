@@ -35,5 +35,9 @@ public class PredicateExample {
         Predicate<Integer> predicate2 = i -> i > 5;
         Predicate<Integer> predicate3 = i -> i < 8;
         System.out.println(predicate2.and(predicate3).and(predicate1.negate()).test(7));
+
+        System.out.println("----- String ----");
+        Predicate<String> stringPredicate = i -> i.contains("a");
+        System.out.println(stringPredicate.test("Sarah"));
     }
 }
