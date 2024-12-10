@@ -36,7 +36,10 @@ public class StreamComparatorExample {
         System.out.println("=== sorted based on years of experience  ===");
         List<String> instructorsName = instructorList.stream()
                 .sorted(Comparator.comparing(Instructor::getYearsOfExperience).reversed())
-                .map(Instructor::getName)
+//                .map(Instructor::getName)
+                .map(Instructor::getCourses)
+                .flatMap(List::stream)
+                .distinct()
                 .toList();
         instructorsName.forEach(System.out::println);
     }
