@@ -43,6 +43,4 @@ public class StreamComparatorExample {
                 .toList();
         instructorsName.forEach(System.out::println);
     }
-
-
 }
