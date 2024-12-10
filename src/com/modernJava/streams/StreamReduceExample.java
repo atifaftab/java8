@@ -14,6 +14,11 @@ public class StreamReduceExample {
                 .reduce(0, Integer::sum);
         System.out.println(sum);
 
+        Optional<Integer> intSum = integerList.stream()
+                .reduce(Integer::sum);
+        intSum.ifPresent(System.out::println);
+
+        System.out.println("=======multiplication ====");
         int multiplication = integerList.stream()
                 .reduce(1, (a, b) -> a * b);
         System.out.println(multiplication);
@@ -25,9 +30,9 @@ public class StreamReduceExample {
         optional.ifPresent(System.out::println);
 
         System.out.println("----");
-        var list = Arrays.asList(16,8,2);
+        var list = Arrays.asList(16, 8, 2);
         Optional<Integer> division = list.stream().reduce(Integer::divideUnsigned);
-        Optional<Integer> division1 = list.stream().reduce((a,b) -> a/b);
+        Optional<Integer> division1 = list.stream().reduce((a, b) -> a / b);
         division.ifPresent(System.out::println);
         System.out.println(division1.get());
 
