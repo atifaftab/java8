@@ -1,9 +1,6 @@
 package com.modernJava.streams;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class StreamMaxExample {
     public static void main(String[] args) {
@@ -15,10 +12,13 @@ public class StreamMaxExample {
         if (optional.isPresent()) {
             System.out.println(optional.get());
         }
-        //same
-        Optional<Integer> max = numberList.stream().max(Integer::compareTo);
-        max.ifPresent(System.out::println);
+//        optional.ifPresent(System.out::println);
+        int maxInt = numberList.stream()
+                .reduce(0,Integer::max);
+        System.out.println(maxInt);
 
+        //sum
+        System.out.println("====== SUM ====");
         Optional<Integer> reduce = numberList.stream().reduce((a, b) -> a > b ? a : b);
         reduce.ifPresent(System.out::println);
 
