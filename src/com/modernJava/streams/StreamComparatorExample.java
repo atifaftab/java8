@@ -15,15 +15,15 @@ public class StreamComparatorExample {
                 .toList();
 
         Instructors.getAll().stream()
-                        .sorted(Comparator.comparing(instructor -> instructor.getName()))
-                        .toList();
+                .sorted(Comparator.comparing(instructor -> instructor.getName()))
+                .toList();
 
         System.out.println(instructorList);
         System.out.println("---------------");
         instructorList.forEach(System.out::println);
 
         System.out.println("---------------");
-        
+
 
         //reversed
         List<Instructor> instructorReversedList = Instructors.getAll().stream()
@@ -31,5 +31,15 @@ public class StreamComparatorExample {
                 .toList();
 
         instructorReversedList.forEach(System.out::println);
+
+
+        System.out.println("=== sorted based on years of experience  ===");
+        List<String> instructorsName = instructorList.stream()
+                .sorted(Comparator.comparing(Instructor::getYearsOfExperience).reversed())
+                .map(Instructor::getName)
+                .toList();
+        instructorsName.forEach(System.out::println);
     }
+
+
 }
