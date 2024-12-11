@@ -1,6 +1,7 @@
 package com.modernJava.streams;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class StreamLimitAndSkipExample {
@@ -13,5 +14,7 @@ public class StreamLimitAndSkipExample {
         System.out.println("----------------");
         List<Integer> skipNum = number.stream().skip(3).toList();
         skipNum.forEach(System.out::println);
+        System.out.println("\n====another way to find max=====");
+        System.out.println(number.stream().sorted(Comparator.reverseOrder()).findFirst().get());
     }
 }

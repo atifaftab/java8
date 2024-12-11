@@ -16,11 +16,17 @@ public class CollectorsMinMaxExample {
 //                .min(Comparator.comparing(Instructor::getYearsOfExperience));
         instructorMinExp.ifPresent(System.out::println);
         System.out.println("-----");
+        Instructors.getAll().stream().collect(Collectors.minBy(Comparator.comparing(Instructor::getYearsOfExperience)));
+        Instructors.getAll().stream().min(Comparator.comparing(Instructor::getYearsOfExperience));
 
-        instructorMinExp = Instructors.getAll().stream()
+        Optional<Instructor> instructor = Instructors.getAll().stream()
+                .reduce((a, b) -> a.getYearsOfExperience() < b.getYearsOfExperience() ? a : b);
+        instructor.ifPresent(System.out::println);
+        System.out.println("-----");
+
+        Optional<Instructor> instructorMinExp2 = Instructors.getAll().stream()
                 .min(Comparator.comparing(Instructor::getYearsOfExperience));
-        System.out.println("instructorMinExp = " + instructorMinExp);
-
+        instructorMinExp2.ifPresent(System.out::println);
         System.out.println("-----");
 
         Optional<Instructor> instructorMaxExp = Instructors.getAll().stream()
@@ -30,8 +36,14 @@ public class CollectorsMinMaxExample {
 
         instructorMaxExp = Instructors.getAll().stream()
                 .max(Comparator.comparing(Instructor::getYearsOfExperience));
-        System.out.println("instructorMaxExp = " + instructorMaxExp);
+        instructorMaxExp.ifPresent(System.out::println);
 
+        System.out.println("-----");
+
+        Optional<Instructor> instructor1 = Instructors.getAll().stream()
+                .reduce((a, b) -> a.getYearsOfExperience() > b.getYearsOfExperience() ? a : b);
+
+        instructor1.ifPresent(System.out::println);
 
 //        Optional<Integer> minExp = Instructors.getAll().stream()
 //                .map(Instructor::getYearsOfExperience)
