@@ -13,15 +13,16 @@ public class FunctionExampleForInstructor {
         //Function which will take List<Instructor> and return Map<String, Integer>
         //to create map of instructor who have online courses, so create predicate
 
+        Map<String, Integer> nameExperienceMap = Instructors.getAll().stream()
+                .filter(Instructor::isOnlineCourse)
+                .collect(Collectors.toMap(Instructor::getName, Instructor::getYearsOfExperience));
         List<Instructor> instructorList = Instructors.getAll();
+        nameExperienceMap.forEach((name, experience) -> System.out.println("name: " + name + " experience: " + experience));
 
-//        instructorList.stream()
-//                .filter(Instructor::isOnlineCourse)
-//                .collect(Collectors.groupingBy())
+        System.out.println("===========");
 
         Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
 //        Predicate<Instructor> instructorPredicate = Instructor::isOnlineCourse;
-
 //        Function<Instructor, Map<String, Integer>> function = Instructors.getAll().stream();
 
         Function<List<Instructor>, Map<String, Integer>> mapFunction = instructors -> {
